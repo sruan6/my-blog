@@ -3,6 +3,10 @@ const { Schema } = require('mongoose');
 // const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
+  uniqueid: String,
+  title: String,
+  profile_image: String,
+  id_name: String,
   username: String,
   password: String,
   displayName: String,
@@ -25,4 +29,4 @@ const userSchema = new Schema({
 //   },
 // };
 
-module.exports = mongoose.model('user', userSchema);
+module.exports = mongoose.model('users', userSchema);
