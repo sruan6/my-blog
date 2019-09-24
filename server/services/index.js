@@ -4,14 +4,10 @@ const GoogleStrat = require('./passport/google');
 const LocalStrat = require('./passport/local');
 const User = require('../db/model/users');
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
+passport.serializeUser((user, done) => done(null, user.id));
 
 passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
-    done(err, user);
-  });
+  User.findById(id, (err, user) => done(err, user));
 });
 
 // Facebook Login Strategy

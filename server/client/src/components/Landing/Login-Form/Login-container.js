@@ -8,7 +8,7 @@ export const LoginContainter = () => (
     <div>
       <Route exact path="/" component={Login} />
       <Route exact path="/login" component={Login} />
-      <Route rxact path="/signup" component={Signup} />
+      <Route exact path="/signup" component={Signup} />
     </div>
   </Router>
 );

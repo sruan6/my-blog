@@ -3,8 +3,13 @@ const { Schema } = require('mongoose');
 
 const postSchema = new Schema({
   uniqueid: String,
-  title: String,
   profile_image: String,
+  title: String,
+  genre: String,
+  rating: String,
+  diffculty: Number,
+  created: String,
+  dateString: String,
 });
 
-module.exports = mongoose.model('post', postSchema);
+module.exports = mongoose.model('posts', postSchema);

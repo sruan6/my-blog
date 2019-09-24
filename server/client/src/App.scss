@@ -1,0 +1,646 @@
+/* import google font */
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Bangers|Barriecito|Belleza|Covered+By+Your+Grace|Gochi+Hand|Monoton|Righteous|Roboto|Rock+Salt|Saira+Stencil+One|Schoolbell|Ultra|Zhi+Mang+Xing&display=swap');
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+body {
+  min-height: 100%;
+  max-width: 100%;
+  background: #eeeeee;
+}
+
+.Modal {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background-color: #ffffff;
+  border: 1px solid #d9dadc;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d9dadc;
+}
+ 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .App {
+  min-height: 90vh;
+  margin: 0px;
+  background: #ffffff;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  }
+  //* Login Form *//
+  /* Login Form */
+  .form-container {
+    width: 80%;
+    height: 370px;
+    background: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+    margin: 10px auto 10px auto;
+    border: 1px solid #d9dadc;
+    border-radius: 10px;
+    .container {
+      padding: 0 20px;
+    }
+    h1 {
+      font-family: 'Saira Stencil One', cursive;
+      font-variant: small-caps;
+      font-weight: 700;
+      font-size: 25px;
+      color: white;
+      text-shadow:
+          3px 3px 0 #000,
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+         -1px 1px 0 #000,
+          1px 1px 0 #000;
+      padding: 5px 0 10px 0;
+    }
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px;
+    }
+    hr {
+      color: #d9dadc;
+      font-size: 10px;
+    }
+    .divider {
+      border-top: 2px solid #d9dadc;
+      display: block;
+      line-height: 1px;
+      margin: 15px 0;
+      position: relative;
+      text-align: center;
+    }
+   .divider-title {
+      background: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 0 10px 0 10px;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-size: 15px;
+      padding: 10px;
+    }
+    h3 {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .signup-link {
+      color: black;
+    }
+    button {
+      width: 120px;
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #eeeeee;
+      border-radius: 20px;
+      font-family: 'Saira Stencil One', cursive;
+      font-size: 9px;
+    }
+    .google-button {
+      background-color:#dd4b39;
+    }
+    .facebook-button {
+      background-color:#3a61b3;
+    }
+    .login-button {
+      background-color: #1ed760;
+      color: white;
+      width: 60px;
+      padding: 5px;
+      border: 1px solid  #1ed760;
+      border-radius: 20px;
+    }
+    .signup-button {
+      background-color: #ffffff;
+      border: 1px solid black;
+    }
+    input {
+      padding: 5px;
+      margin: 2px;
+    }
+    .form-login {
+      margin: 10px;
+    }
+  }
+ /* Home */
+ .Modal {
+  padding: 20px;
+  .subtitle {
+    font-size: 30px;
+    font-variant: small-caps;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 0 20px 0;
+  }
+}
+.Home {
+  h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 3em;
+    font-variant: small-caps;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 30px;
+  }
+}
+
+/* Upload.js */
+
+/* Thumbnail */
+.dropzone {
+  text-align: center;
+  width: 150px;
+  margin: auto auto 20px auto;
+}
+.drop-container, .drag-container{
+  position: relative;
+  width: 50%;
+}
+.drag-container {
+  .img-thumbnail {
+    height: 150px;
+    width: 150px;
+    opacity: 0.5;
+  }
+}
+.drop-container {
+  .text::before {
+    content: "Click upload image";
+  }
+  .img-thumbnail {
+    height: 150px;
+    width: 150px;
+    opacity: 0.5;
+  }
+}
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 150px;
+  transition: .5s ease;
+}
+
+
+
+.img-thumbnail {
+  height: 150px;
+  width: 150px;
+}
+
+  /* Upload.js */
+
+  /* Thumbnail */
+  .img-thumbnail {
+    height: 150px;
+    width: 150px;
+  }
+  /* Files.js */
+  .wrapper {
+    text-align: center;
+    .table  {
+      width: 100%;
+      border-collapse: collapse;
+      thead {
+        .thead-tr {
+          font-family: 'Saira Stencil One', cursive;
+          font-size: 0.7em;
+          font-variant: small-caps;
+        }
+      }
+      tbody{
+        .tbody-tr {
+          border-bottom: 1px solid black;
+          padding: 10px 0px 10px 0px;
+ 
+          .tbody-td {
+            // border-right: 1px solid black;
+            padding: 10px 0px 10px 0px;
+          }
+          // .tbody-td:last-child {
+          //   border-right: 0px;
+          // }
+          .td-image {
+            height: 50px;
+            width: 50px;
+            border-width: 4px;
+            border-style: double;
+            border-color:#222222;
+            border-radius: 50%; 
+          }
+          .td-link {
+            font-variant: small-caps;
+            text-decoration: none;
+            .td-title {
+              font-family: 'Belleza', sans-serif;
+              font-variant: small-caps;
+              font-size: 0.8em;
+            }
+          }
+          .td-rating {
+            font-size: 0.6em;
+          }
+          .td-company {
+            font-size: 0.6em;
+          }
+        }
+        .tbody-tr:last-child {
+          border-bottom: 0px;
+        }
+      }
+    }
+  }
+
+  /* Post.js */
+  .post-info {
+    h1 {
+      font-size: 2em;
+      font-variant: small-caps;
+      text-align: center;
+      font-weight: 700;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    h2 {
+      font-family: 'Audiowide', cursive;
+      font-size: 1em;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  /* Login Form */
+  .form-container {
+      width: 700px;
+      height: 450px;
+      background: #ffffff;
+      text-align: center;
+      font-size: 20px;
+      padding: 40px 0 40px 0;
+      margin: 4% auto 5% auto;
+      border: 1px solid #d9dadc;
+      border-radius: 15px;
+      box-shadow: 5px 10px #888888;
+      .container {
+        padding: 0 60px;
+      }
+      h1 {
+        font-family: 'Saira Stencil One', cursive;
+        // font-family: 'Ultra', serif;
+        // font-family: 'Monoton', cursive;
+        font-variant: small-caps;
+        font-weight: 700;
+        font-size: 35px;
+        // -webkit-text-stroke: 1px black;
+        color: white;
+        text-shadow:
+            3px 3px 0 #000,
+          -1px -1px 0 #000,  
+           1px -1px 0 #000,
+           -1px 1px 0 #000,
+            1px 1px 0 #000;
+        padding: 0 0 20px 0;
+      }
+      h2 {
+        font-size: 14px;
+        font-weight: 700;
+        padding: 2px;
+      }
+      hr {
+        color: #d9dadc;
+        font-size: 25px;
+      }
+      .divider {
+        border-top: 2px solid #d9dadc;
+        display: block;
+        line-height: 1px;
+        margin: 15px 0;
+        position: relative;
+        text-align: center;
+      }
+     .divider-title {
+        background: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 0 20px 0 20px;
+        text-transform: uppercase;
+      }
+      h3 {
+        font-size: 14px;
+        font-weight: 700;
+        padding: 20px 0 10px 0;
+        border-top: 2px solid #d9dadc;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .signup-link {
+        color: black;
+      }
+      button {
+        width: 200px;
+        padding: 12px 20px 12px 20px;
+        margin: 5px;
+        border: 1px solid #eeeeee;
+        border-radius: 20px;
+        // font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+      }
+      .google-button {
+        background-color:#dd4b39;
+      }
+      .facebook-button {
+        background-color:#3a61b3;
+      }
+      .login-button {
+        background-color: #1ed760;
+        width: 100px;
+        padding: 10px;
+        border: 1px solid  #1ed760;
+        border-radius: 20px;
+        color: #ffffff;
+      }
+      .signup-button {
+        background-color: #ffffff;
+        border: 1px solid black;
+      }
+      input {
+        padding: 5px;
+        margin: 2px;
+      }
+      .form-login {
+        margin: 10px;
+      }
+    }
+  /* Home */
+  .Modal {
+    padding: 30px;
+    .subtitle {
+      font-size: 80px;
+      font-variant: small-caps;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 0 20px 0;
+    }
+  }
+  .Home {
+    h1 {
+      font-family: 'Righteous', cursive;
+      font-size: 3em;
+      font-variant: small-caps;
+      text-align: center;
+      font-weight: 700;
+      padding-bottom: 30px;
+    }
+  }
+  
+  /* Upload.js */
+  
+  /* Thumbnail */
+  .dropzone {
+    text-align: center;
+    width: 250px;
+    margin: auto auto 20px auto;
+    border: 0px;
+  }
+  .drop-container, .drag-container{
+    position: relative;
+    width: 100%;
+  }
+  .drag-container {
+    .img-thumbnail {
+      height: 250px;
+      width: 250px;
+      opacity: 0.5;
+    }
+  }
+  .drag-text:before {
+    content: "Drop here";
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .drop-text:before {
+    content: "Click or Drag to upload";
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .dropzone:hover {
+    .drop-text:before {
+    content: "Click to upload";
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+    .img-thumbnail {
+      height: 250px;
+      width: 250px;
+      opacity: 0.5;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    transition: .5s ease;
+    h1 {
+      font-weight: 700;
+    }
+  }
+  
+  .img-thumbnail {
+    height: 250px;
+    width: 250px;
+    background: gray;
+    border-radius: 50%;
+  }
+  /* Files.js */
+  .App {
+    min-height: 90vh;
+    margin: 30px;
+    background: #ffffff;
+    padding: 40px 0 0 0;
+    border: 1px solid #d9dadc;
+    border-radius: 25px;
+  }
+  .wrapper {
+    margin-top: 10px;
+    text-align: center;
+    .table  {
+      width: 100%;
+      padding: 10px;
+      border-collapse: collapse;
+      thead {
+        border-top: 1px solid #d9dadc;
+        border-bottom: 1px solid#d9dadc;
+        .thead-tr {
+          font-family: 'Saira Stencil One', cursive;
+          font-size: 1.7em;
+          font-variant: small-caps;
+          font-weight: 700;
+        }
+      }
+      .tbody{ 
+        .tbody-tr {
+          border-bottom: 2px solid #d9dadc;
+          padding: 20px 40px 20px 40px;
+          vertical-align: middle;
+          .tbody-td {
+            padding: 20px;
+            vertical-align: middle;
+          }
+          // .tbody-td:last-child {
+          //   border-right: 0px
+          // }
+          .td-image {
+            height: 150px;
+            width: 150px;
+            border-width: 5px;
+            border-style: double;
+            border-color:#d9dadc;
+            border-radius: 50%; 
+          }
+          .td-link {
+            font-variant: small-caps;
+            text-decoration: none;
+            .td-title {
+              font-family: 'Ultra', serif;
+              font-variant: small-caps;
+              font-size: 1.2em;
+            }
+          }
+          .td-rating {
+            font-size: 1.2em;
+            font-variant: small-caps;
+            font-weight: 700;
+          }
+          .td-company {
+            font-size: 1.2em;
+            font-variant: small-caps;
+            font-weight: 700;
+          }
+        }
+        .tbody-tr:last-child {
+          border-bottom: 0px;
+        }
+      }
+    }
+  }
+  
+  /* Post.js */
+  .post-info {
+    h1 {
+      font-size: 2.5em;
+      font-variant: small-caps;
+      text-align: center;
+      font-weight: 700;
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    h2 {
+      font-family: 'Audiowide', cursive;
+      font-size: 1.5em;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+ 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {} 
+

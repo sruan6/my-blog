@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
   uniqueid: String,
   title: String,
   profile_image: String,
   id_name: String,
+  email: String,
   username: String,
   password: String,
   displayName: String,
@@ -20,13 +21,13 @@ const userSchema = new Schema({
   provider: String,
 });
 
-// userSchema.methods = {
-//   checkPassword(inputPassword) {
-//     return bcrypt.compareSync(inputPassword, this.password);
-//   },
-//   hashPassword(plainTextPassword) {
-//     return bcrypt.hashSync(plainTextPassword, 10);
-//   },
-// };
+userSchema.methods = {
+  checkPassword(inputPassword) {
+    return bcrypt.compareSync(inputPassword, this.password);
+  },
+  hashPassword(plainTextPassword) {
+    return bcrypt.hashSync(plainTextPassword, 10);
+  },
+};
 
 module.exports = mongoose.model('users', userSchema);

@@ -1,8 +1,11 @@
 const { ApolloServer } = require('apollo-server-express');
 const { existsSync, mkdirSync } = require('fs');
 const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
 const path = require('path');
 const express = require('express');
+const { cookieKey } = require('./config/keys');
 const schema = require('./db/gql/schema');
 require('./db');
 require('./services');
@@ -18,6 +21,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+app.use(
+  cookieSession({
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    keys: [cookieKey],
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 require('./routes/authRoute')(app);
 
 app.use(

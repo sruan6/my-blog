@@ -11,7 +11,9 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 // css
-// import './index.css';
+
+import './reset.css';
+import './App.scss';
 import App from './App';
 
 const link = createUploadLink({ uri: '/graphql' });

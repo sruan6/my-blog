@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import Question from './question.jpg';
 
 export default class Thumb extends React.Component {
   state = {
@@ -6,7 +8,7 @@ export default class Thumb extends React.Component {
     thumb: undefined,
   };
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!nextProps.file) {
       return;
     }
@@ -23,25 +25,14 @@ export default class Thumb extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const { file } = this.props;
     const { loading, thumb } = this.state;
 
     if (!file) {
-      return null;
+      return <img src="" alt="" className="img-thumbnail mt-2" />;
     }
 
-    if (loading) {
-      return <p>loading...</p>;
-    }
-
-    return (
-      <img
-        src={thumb}
-        alt={file.name}
-        className="img-thumbnail mt-2"
-        height={200}
-        width={200}
-      />
-    );
+    return <img src={thumb} alt={file.name} className="img-thumbnail mt-2" />;
   }
 }

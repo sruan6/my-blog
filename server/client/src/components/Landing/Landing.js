@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { LoginContainter } from './Login-Form/Login-container';
@@ -7,6 +9,7 @@ class Landing extends Component {
   renderContent() {
     switch (this.props.auth) {
       case null:
+        // when null load animination
         return;
       case false:
         // If not logged In

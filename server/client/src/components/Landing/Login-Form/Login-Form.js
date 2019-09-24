@@ -1,27 +1,40 @@
+/* eslint-disable react/button-has-type */
 import React from 'react';
 
 export const Login = () => (
-  <div>
-    <h1>Website Name</h1>
+  <div className="form-container">
+    <h1 className="login-title">Stephen's Blog</h1>
     <hr />
-    <a href="/auth/google">Login With Google</a>
-    <a href="/auth/facebook">Login with Facebook</a>
-    <h4>OR</h4>
-    <form action="/login" method="post">
-      <div>
-        <label>Username:</label>
-        <input type="text" name="username" />
+    <div className="container">
+      <h2>To continue, log in!</h2>
+      <button className="google-button">
+        <a href="/auth/google">Login With Google</a>
+      </button>
+      <br />
+      <button className="facebook-button">
+        <a href="/auth/facebook">Login with Facebook</a>
+      </button>
+      <div className="divider">
+        <strong className="divider-title ng-binding">or</strong>
       </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" name="password" />
-      </div>
-      <div>
-        <input type="submit" value="Log In" />
-      </div>
-    </form>
-    <hr />
-    <h3>Don't Have an account?</h3>
-    <a href="/signup">SIGN UP</a>
+
+      <form action="/auth/login" method="post">
+        <div>
+          <input type="text" name="username" placeholder="username" />
+        </div>
+        <div>
+          <input type="password" name="password" placeholder="password" />
+        </div>
+        <div className="form-login">
+          <input className="login-button" type="submit" value="Log In" />
+        </div>
+      </form>
+      <h3>Don't Have an account?</h3>
+      <button className="signup-button">
+        <a className="signup-link" href="/signup">
+          SIGN UP
+        </a>
+      </button>
+    </div>
   </div>
 );
